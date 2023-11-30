@@ -27,8 +27,10 @@ p result  # Expected output: [2, 4, 6, 8, 10]
 
 def call_proc(my_proc)
   count = 500
-  my_proc.call(count)
+  my_proc.call()
 end
 count   = 1
-my_proc = Proc.new {|count| puts count }
+my_proc = -> { puts count }
+
 p call_proc(my_proc)
+
